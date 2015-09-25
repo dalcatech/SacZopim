@@ -17,12 +17,7 @@ class IndexController extends AbstractActionController
     public function indexAction()
     {
         $request = $this->getRequest();
-        $request->getPost()->toArray();
-        $post = $request->getPost()->toArray();
-
-        $post['nome']='Jefferson';
-//        /print_r($retorno['data']);
-
+        $post = $request->getQuery()->toArray();
         $retorno['data'] = array(
             'empresa'             => $this->manipularNomeEmpresa($post),
             'nomeUsuarioA2'       => $this->manipularNomeUsuarioA2($post),

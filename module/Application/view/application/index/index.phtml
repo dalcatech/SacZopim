@@ -1,4 +1,4 @@
-<!--Start of Zopim Live Chat Script-->
+<!-- Inicio do Script iFrame que chama o chat da Zopim-->
 <script type="text/javascript">
     window.$zopim || (function (d, s) {
         var z = $zopim = function (c) {
@@ -19,7 +19,7 @@
         e.parentNode.insertBefore($, e)
     })(document, "script");
 </script>
-<!--End of Zopim Live Chat Script-->
+<!-- Fim do Script iFrame que chama o chat da Zopim-->
 
 <script>
     $zopim(function() {
@@ -29,6 +29,7 @@
         //$zopim.livechat.appendNotes('Teste');
 
         $zopim.livechat.setName('<?= $this->data['empresa'] ?>');
+        $zopim.livechat.setPhone('');
         $zopim.livechat.addTags('<?= $this->data['modulo'] ?>','<?= $this->data['nomeUsuarioA2'] ?>','Cliente 5 estrelas');
 
     });
@@ -38,33 +39,24 @@
 
     $zopim(function() {
         $zopim.livechat.window.setOffsetHorizontal(0);
-        $zopim.livechat.prechatForm.setGreetings('Please introduce yourself.');
+        //$zopim.livechat.clearAll();
+        //alert($zopim.livechat.isChatting())
     });
     window.onload = setTimeout(function(){
         $("iframe").contents().find(".logged_in_actions.jx_ui_Widget").remove();
         $("iframe").contents().find(".meshim_widget_widgets_Branding.branding").remove();
+        $("iframe").contents().find(".actions.jx_ui_Widget").remove();
     }, 1000);
 
-    // encerra chat
     window.onload = setTimeout(function(){
-        $zopim(function() {
-            $zopim.livechat.endChat();
-            // limpa toda a conversa
-            //$zopim.livechat.clearAll();
-            //alert($zopim.livechat.isChatting())
-        });
-    }, 10000);
+        $("iframe").contents().find(".logged_in_actions.jx_ui_Widget").remove();
+        $("iframe").contents().find(".meshim_widget_widgets_Branding.branding").remove();
+        $("iframe").contents().find(".actions.jx_ui_Widget").remove();
+    }, 2000);
+
+    window.onload = setTimeout(function(){
+        $("iframe").contents().find(".logged_in_actions.jx_ui_Widget").remove();
+        $("iframe").contents().find(".meshim_widget_widgets_Branding.branding").remove();
+        $("iframe").contents().find(".actions.jx_ui_Widget").remove();
+    }, 5000);
 </script>
-
-
-<?php
-echo $this->data['empresa'];
-echo "<br />";
-echo $this->data['nomeUsuarioA2'];
-echo "<br />";
-echo $this->data['nomeUsuarioDigitado'];
-echo "<br />";
-echo $this->data['telefone'];
-echo "<br />";
-echo $this->data['modulo'];
-?>
