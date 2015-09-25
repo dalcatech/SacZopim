@@ -31,7 +31,10 @@ class IndexController extends AbstractActionController
         return $viewModel;
     }
 
-
+    /**
+     * @param array $data
+     * @return string
+     */
     private function manipularNomeEmpresa(array $data)
     {
         if(isset($data['empresa'])):
@@ -40,6 +43,11 @@ class IndexController extends AbstractActionController
             return "Não identificado";
         endif;
     }
+
+    /**
+     * @param array $data
+     * @return string
+     */
     private function manipularNomeUsuarioA2(array $data)
     {
         if(isset($data['nomeUsuarioA2'])):
@@ -49,6 +57,10 @@ class IndexController extends AbstractActionController
         endif;
     }
 
+    /**
+     * @param array $data
+     * @return string
+     */
     private function manipularNomeUsuarioDigitado(array $data)
     {
         if(isset($data['nomeUsuarioDigitado'])):
@@ -58,6 +70,10 @@ class IndexController extends AbstractActionController
         endif;
     }
 
+    /**
+     * @param array $data
+     * @return string
+     */
     private function manipularTelefone(array $data)
     {
         if(isset($data['telefone'])):
@@ -66,6 +82,11 @@ class IndexController extends AbstractActionController
             return "Telefone : Não identificado";
         endif;
     }
+
+    /**
+     * @param array $data
+     * @return string
+     */
     private function manipularModulo(array $data)
     {
         if(isset($data['modulo'])):
